@@ -21,4 +21,23 @@ Perfect for doctors, nurses, researchers, medical students, and personal health 
 - Responsive, professional medical-style design
 - Zero external API calls — fully private
 
-### Project Files (Everything in one folder)
+
+### Quick Start (2 minutes)
+
+1. Save the Python code as `medical_summarizer.py`
+2. Open terminal/command prompt in that folder
+3. Run these commands:
+
+```bash
+# Create virtual environment (recommended)
+python -m venv venv
+# Windows:
+venv\Scripts\activate
+# macOS/Linux:
+source venv/bin/activate
+
+# Install everything
+pip install flask transformers torch sentencepiece PyPDF2 weasyprint
+
+# Run the app
+python medical_summarizer.py
