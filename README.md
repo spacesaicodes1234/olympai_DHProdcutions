@@ -44,3 +44,8 @@ source venv/bin/activate        # On Windows: venv\Scripts\activate
 
 # 3. Install dependencies
 pip install -r requirements.txt
+
+```
+
+Open your browser → http://127.0.0.1:5000
+Upload a medical report → Get AI summary → Download or copy!
