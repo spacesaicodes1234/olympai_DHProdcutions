@@ -1,25 +1,37 @@
-# Medical Report PDF Summarizer  
-**Upload a medical report (PDF) → Get a clear AI summary in seconds → Export as PDF**  
-100% local • Zero data sent • Works offline • Built with T5 (Google)
+# Medical Report Summarizer  
+**AI-Powered PDF to Clinical Summary in Seconds**
 
-![Demo Preview](https://github.com/user-attachments/assets/placeholder-demo-image.png)  
-*(Beautiful modern interface with upload, summary card, copy & download buttons)*
+A beautiful, fully offline, privacy-first web tool that lets you **upload any medical report in PDF format** and instantly generates a **clear, professional, AI-written summary** using the T5 transformer model.
+
+No data leaves your device • Works 100% locally • Export summaries as stunning PDFs
+
+Perfect for doctors, nurses, medical students, researchers, and anyone managing health records.
+
+![Demo Preview](https://via.placeholder.com/1200x600/2563eb/ffffff?text=Medical+Report+Summarizer+•+Clean+Modern+UI)  
+*(Live demo screenshot – replace with your own when deployed)*
+
+---
 
 ### Features
+
 - Upload any medical PDF (digital or scanned)
-- Instant AI-powered abstractive summary using T5 transformer
-- One-click **Copy to Clipboard**
-- One-click **Download Summary as Professional PDF**
-- Fully offline after first run (no API keys, no cloud)
-- Privacy-first: nothing ever leaves your computer
-- Responsive & clean medical-style UI
+- Smart text extraction with PyPDF2
+- Abstractive summarization using **T5 (Google/Hugging Face)**
+- Adjustable summary length (short, medium, detailed)
+- One-click **"Copy to Clipboard"**
+- One-click **"Download as Professional PDF"** (with date, filename, disclaimer)
+- Modern, responsive, medical-grade UI
+- Zero cloud dependency — completely offline after setup
 
-Perfect for doctors, nurses, researchers, medical students, and personal health records.
+---
 
-### Live Demo Video / Screenshots
-<img src="https://github.com/user-attachments/assets/placeholder-screenshot1.png" width="48%"> <img src="https://github.com/user-attachments/assets/placeholder-screenshot2.png" width="48%">
+### Live Demo (Local)
+Run the app and visit:  
+http://127.0.0.1:5000
 
-### Quick Start (Runs in 2 minutes)
+---
+
+### Quick Start
 
 ```bash
 # 1. Clone the repo
@@ -28,7 +40,7 @@ cd medical-report-summarizer
 
 # 2. Create virtual environment (recommended)
 python -m venv venv
-source venv/bin/activate      # Windows: venv\Scripts\activate
+source venv/bin/activate        # On Windows: venv\Scripts\activate
 
 # 3. Install dependencies
 pip install -r requirements.txt
