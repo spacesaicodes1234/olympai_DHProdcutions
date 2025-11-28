@@ -13,7 +13,7 @@ app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB max file size
 os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 
 # Load T5 model (use t5-base for better medical summaries)
-MODEL_NAME = "t5-base"  # or "t5-small" for faster, lighter
+MODEL_NAME = "t5-base" 
 try:
     tokenizer = T5Tokenizer.from_pretrained(MODEL_NAME, legacy=False)
     model = T5ForConditionalGeneration.from_pretrained(MODEL_NAME)
@@ -116,4 +116,5 @@ def index():
     )
 
 if __name__ == '__main__':
+
     app.run(debug=True)
