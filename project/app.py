@@ -1,4 +1,3 @@
-# app.py — FINAL VERSION with Health Tips + PDF Download + Windows Fix
 import os
 import io
 from flask import Flask, render_template, request, flash, send_file
@@ -8,7 +7,6 @@ from transformers import T5ForConditionalGeneration, T5Tokenizer
 from datetime import datetime
 from weasyprint import HTML
 
-# === WINDOWS GTK3 FIX (remove or comment out if on Linux/Mac) ===
 try:
     gtk_path = r"C:\Program Files\GTK3-Runtime Win64\bin"
     if os.path.exists(gtk_path):
@@ -23,11 +21,11 @@ app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
 os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 
 # Load model
-MODEL_NAME = "t5-base"  # Change to "razent/SciFive-large-PMC" for better medical accuracy
+MODEL_NAME = "t5-base" 
 tokenizer = T5Tokenizer.from_pretrained(MODEL_NAME, legacy=False)
 model = T5ForConditionalGeneration.from_pretrained(MODEL_NAME)
 
-# === HEALTH TIPS ENGINE ===
+# HEALTH TIPS ENGINE 
 def generate_health_tips(text, summary):
     text_lower = text.lower()
     summary_lower = summary.lower()
@@ -74,7 +72,12 @@ def generate_health_tips(text, summary):
 
     return tips[:5]  # Limit to top 5 most relevant
 
-# === ROUTES ===
+#  ROUTES 
+
+@app.route('/credits')
+def credits():
+    return render_template('credits.html')
+
 @app.route('/', methods=['GET', 'POST'])
 def index():
     summary = ''
