@@ -52,7 +52,7 @@ Upload a medical report → Get AI summary → Download or copy!
 
 ### File/Folder,Purpose & Description
 
-| Header 2 | Header 3 |
+| File/Folder | Purpose & Description |
 |---|---|
-| Row 1, Col 2 | Row 1, Col 3 |
-| Row 2, Col 2 | Row 2, Col 3 |
+| app.py | Main Flask application. Contains all backend logic: PDF upload, text extraction, T5 summarization, and PDF export generation. This is the only file you run. |
+| templates/index.html | Frontend UI (single-page). Beautiful, responsive design with upload form, copy button, and "Download PDF" link. Uses Jinja2 templating to display the summary. |
