@@ -56,3 +56,6 @@ Upload a medical report → Get AI summary → Download or copy!
 |---|---|
 | app.py | Main Flask application. Contains all backend logic: PDF upload, text extraction, T5 summarization, and PDF export generation. This is the only file you run. |
 | templates/index.html | Frontend UI (single-page). Beautiful, responsive design with upload form, copy button, and "Download PDF" link. Uses Jinja2 templating to display the summary. |
+| uploads/ | Auto-created folder where uploaded PDFs are temporarily saved during processing. Files are not deleted automatically (you can clear manually or add cleanup logic). |
+| requirements.txt | Complete list of Python dependencies with pinned versions for perfect reproducibility. |
+| README.md | This file – full project documentation, setup guide, and file descriptions. |
