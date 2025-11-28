@@ -41,3 +41,8 @@ pip install flask transformers torch sentencepiece PyPDF2 weasyprint
 
 # Run the app
 python medical_summarizer.py
+
+```
+
+Open your browser → http://127.0.0.1:5000
+Upload any medical PDF → Get summary → Download or copy!
