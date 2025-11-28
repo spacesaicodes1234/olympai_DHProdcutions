@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Credits & Acknowledgments • Medical Report Summarizer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #F5C857;
+            --secondary: #F5C857;
+            --background-light: #FFFFFF; 
+            --background-dark: #FFFFFF; 
+            --text-dark: #1e293b; 
+            --text-light: #64748b; 
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--background-light);
+            margin: 0;
+            padding: 20px;
+            color: var(--text-dark);
+        }
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: var(--background-light);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+        }
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin: 0;
+        }
+        .subtitle {
+            color: var(--text-light);
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+        .section {
+            margin: 40px 0;
+        }
+        .section h2 {
+            color: var(--primary);
+            border-bottom: 3px solid var(--primary);
+            padding-bottom: 10px;
+        }
+        .credits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .credit-card {
+            background: var(--background-light);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 5px solid var(--primary);
+            transition: transform 0.2s;
+        }
+        .credit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .credit-card h3 {
+            margin: 0 0 8px 0;
+            color: var(--text-dark);
+        }
+        .credit-card a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        .credit-card a:hover {
+            text-decoration: underline;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid var(--primary);
+            color: var(--text-light);
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Credits & Acknowledgments</h1>
+            <div class="section">
+            <h2>Team:</h2>
+            <div class="credits-grid">
+                <div class="credit-card">
+                    <h3>Asher</h3>
+                    <p>UI and creative designer</p>
+                    <a href="https://rsms.me/inter/" target="_blank">GitHub</a>
+                </div>
+                <div class="credit-card">
+                    <h3>Sai Shashank</h3>
+                    <p>Programmer and group leader</p>
+                    <a href="https://rsms.me/inter/" target="_blank">GitHub</a>
+                </div>
+                <div class="credit-card">
+                    <h3>Hrishi Parekh</h3>
+                    <p>Programmer coordinator</p>
+                    <a href="https://rsms.me/inter/" target="_blank">GitHub</a>
+                </div>
+            </div>
+        </div>
+        </header>
+
+        <div class="section">
+            <h2>Core AI Model</h2>
+            <div class="credits-grid">
+                <div class="credit-card">
+                    <h3>T5 (Text-to-Text Transfer Transformer)</h3>
+                    <p>By Google Research • 2020</p>
+                    <a href="https://huggingface.co/t5-base" target="_blank">huggingface.co/t5-base</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Libraries & Frameworks</h2>
+            <div class="credits-grid">
+                <div class="credit-card">
+                    <h3>Flask</h3>
+                    <p>Lightweight Python web framework</p>
+                    <a href="https://flask.palletsprojects.com" target="_blank">flask.palletsprojects.com</a>
+                </div>
+                <div class="credit-card">
+                    <h3>Hugging Face Transformers</h3>
+                    <p>State-of-the-art NLP models</p>
+                    <a href="https://huggingface.co" target="_blank">huggingface.co</a>
+                </div>
+                <div class="credit-card">
+                    <h3>PyPDF2</h3>
+                    <p>PDF text extraction</p>
+                    <a href="https://github.com/py-pdf/PyPDF2" target="_blank">GitHub</a>
+                </div>
+                <div class="credit-card">
+                    <h3>WeasyPrint</h3>
+                    <p>HTML → PDF rendering engine</p>
+                    <a href="https://weasyprint.org" target="_blank">weasyprint.org</a>
+                </div>
+            </div>
+        </div>
+        <footer><p class="subtitle">This app is made possible by amazing open-source tools and research</p></footer>
+    </div>
+</body>
+</html>
