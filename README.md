@@ -7,7 +7,8 @@ No data leaves your device • Works 100% locally • Export summaries as stunni
 
 Perfect for doctors, nurses, medical students, researchers, and anyone managing health records.
 
- 
+### Screenshots:
+<img width="1057" height="931" alt="image" src="https://github.com/user-attachments/assets/bafa9f18-4eb6-482b-8819-4860247a0121" />
 
 ---
 
