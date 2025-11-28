@@ -35,8 +35,9 @@ http://127.0.0.1:5000
 
 ```bash
 # 1. Clone the repo
-git clone https://github.com/yourusername/medical-report-summarizer.git
-cd medical-report-summarizer
+git clone https://github.com/spacesaicodes1234/olympai_DHProdcutions.git
+cd olympai_DHProdcutions
+cd project
 
 # 2. Create virtual environment (recommended)
 python -m venv venv
