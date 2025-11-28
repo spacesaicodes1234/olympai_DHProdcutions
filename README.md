@@ -1,6 +1,6 @@
 # Medical Report PDF Summarizer  
 **Upload a medical report (PDF) → Get a clear AI summary in seconds → Export as PDF**  
-100% local • Zero data sent • Works offline • Built with T5 (Google) + Grok 4 (xAI)
+100% local • Zero data sent • Works offline • Built with T5 (Google)
 
 ![Demo Preview](https://github.com/user-attachments/assets/placeholder-demo-image.png)  
 *(Beautiful modern interface with upload, summary card, copy & download buttons)*
