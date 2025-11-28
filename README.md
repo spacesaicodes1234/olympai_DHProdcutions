@@ -10,7 +10,8 @@ Perfect for doctors, nurses, medical students, researchers, and anyone managing 
 ### Screenshots:
 <img width="1057" height="931" alt="image" src="https://github.com/user-attachments/assets/bafa9f18-4eb6-482b-8819-4860247a0121" />
 <img width="970" height="722" alt="image" src="https://github.com/user-attachments/assets/e418ce08-a68e-47a7-b544-9ad498731ad3" />
-<img width="970" height="722" alt="image" src="https://github.com/user-attachments/assets/abbf3db6-11f9-42ee-8f8b-38b491ebd1b1" />
+<img width="655" height="731" alt="image" src="https://github.com/user-attachments/assets/84b23387-0dd3-4a6c-a55d-33101ea14dd0" />
+
 
 ---
 
