@@ -7,8 +7,7 @@ No data leaves your device • Works 100% locally • Export summaries as stunni
 
 Perfect for doctors, nurses, medical students, researchers, and anyone managing health records.
 
-![Demo Preview](https://via.placeholder.com/1200x600/2563eb/ffffff?text=Medical+Report+Summarizer+•+Clean+Modern+UI)  
-*(Live demo screenshot – replace with your own when deployed)*
+ 
 
 ---
 
