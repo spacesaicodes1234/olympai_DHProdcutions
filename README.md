@@ -80,9 +80,9 @@ Downlaod zip from github repo
 **Step3:** 
 Get an idle(Vscode,thonny,pycharm,etc)
 
-Vscode: https://code.visualstudio.com/
-Thonny: https://thonny.org/
-pycharm: https://www.jetbrains.com/pycharm/
+- Vscode: https://code.visualstudio.com/
+- Thonny: https://thonny.org/
+- pycharm: https://www.jetbrains.com/pycharm/
 
 **Step4:** 
 Extract zip and open in idle
