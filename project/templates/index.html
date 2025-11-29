@@ -19,11 +19,10 @@
             --text-light: #6c757d; 
             --border: #dee2e6;
             --shadow: rgba(0, 0, 0, 0.05);
-            /* New variable for cleaner border hover */
             --border-hover: var(--primary); 
         }
         body.dark {
-            --primary: #ffc107; /* Keep yellow */
+            --primary: #ffc107; 
             --primary-dark: #e0a800; 
             --secondary: #adb5bd;
             --accent: #fd7e14;
@@ -54,7 +53,7 @@
         }
         header {
             background: var(--primary);
-            color: #212529; /* Dark text for yellow bg */
+            color: #212529; 
             padding: 30px;
             text-align: center;
             position: relative;
@@ -121,35 +120,35 @@
             padding: 30px;
         }
         
-        /* --- CLEANED-UP UPLOAD BOX STYLES --- */
+        /* --- CLEANED-UP & ALIGNED UPLOAD BOX STYLES --- */
         .upload-box {
-            /* Main container styling */
+            min-height: 180px; 
             border: 2px dashed var(--border);
             border-radius: 12px; 
-            padding: 30px; 
+            /* Added back general padding */
+            padding: 30px 20px; 
             text-align: center;
             background: var(--background-light);
             color: var(--text-dark);
             transition: all 0.3s ease; 
             cursor: pointer; 
-            max-width: 400px; 
-            margin: 20px auto; 
+            
+            /* KEY CHANGE 1: Removed max-width and auto margins for full width alignment */
+            /* max-width: 400px; */
+            margin: 20px 0; /* Align with summary card, which is within .content padding */
         }
 
-        /* Hover effect on the box */
         .upload-box:hover {
             border-color: var(--border-hover);
             background: var(--background-dark);
         }
 
-        /* Icon styling */
         .upload-icon {
             color: var(--primary);
             margin-bottom: 10px;
-            font-size: 3rem; /* Larger icon */
+            font-size: 3rem; 
         }
 
-        /* Header styling */
         .upload-box h3 {
             margin-top: 0; 
             margin-bottom: 5px;
@@ -157,42 +156,41 @@
             color: var(--primary); 
         }
 
-        /* Support text styling */
         .upload-support {
             font-size: 0.9rem;
             color: var(--text-light);
             margin-bottom: 20px;
         }
 
-        /* Custom label/button styling */
+        /* KEY CHANGE 2: Reset label to look like a standard button */
         .upload-label {
-            display: inline-block;
-            padding: 10px 20px;
+            display: inline-block; /* Make it fit content width */
+            padding: 10px 20px; /* Standard button padding */
             background-color: var(--primary);
-            color: var(--text-dark); /* Dark text for yellow button */
-            border-radius: 8px;
-            cursor: pointer;
+            color: var(--text-dark); 
             font-weight: 600;
-            margin-top: 10px;
-            transition: background-color 0.2s ease, transform 0.2s;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            
+            /* Reset negative margins and border radius from full-width attempt */
+            margin: 10px auto; 
+            border-radius: 8px; 
         }
 
         .upload-label:hover {
             background-color: var(--primary-dark); 
-            transform: translateY(-1px);
         }
 
-        /* Placeholder for showing the file name after selection */
         .file-name {
             display: block;
             margin-top: 15px;
             font-style: italic;
             font-weight: 500;
             color: var(--text-dark);
+            padding-bottom: 0; /* Resetting padding */
         }
-        
-        /* --- END CLEANED-UP UPLOAD BOX STYLES --- */
-        
+        /* --- END UPLOAD BOX STYLES --- */
+
         .controls {
             display: flex;
             gap: 20px;
@@ -337,7 +335,8 @@
             <form method="post" enctype="multipart/form-data">
                 <div class="upload-box">
                     <div class="upload-icon">
-                        <i class="fas fa-cloud-upload-alt"></i> </div>
+                        <i class="fas fa-cloud-upload-alt"></i>
+                    </div>
                     <h3>Upload Medical Report</h3>
                     <p class="upload-support">Supports digital & scanned PDFs • Max **16MB**</p>
                     
@@ -439,7 +438,7 @@
             });
         }
         
-        // --- NEW JAVASCRIPT FOR CLEANER UPLOAD INPUT ---
+        // JAVASCRIPT FOR CLEANER UPLOAD INPUT
         document.getElementById('pdf_upload').addEventListener('change', function() {
             const fileNameDisplay = document.getElementById('file_name');
             const uploadButtonText = document.querySelector('.upload-button-text');
@@ -456,7 +455,6 @@
                 uploadButtonText.textContent = 'Choose File or Drag Here';
             }
         });
-        // --- END NEW JAVASCRIPT ---
     </script>
 </body>
 </html>
