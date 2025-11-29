@@ -79,7 +79,6 @@ Downlaod zip file from the GitHub repository on this website using the highlight
 
 <img width="1605" height="631" alt="image" src="https://github.com/user-attachments/assets/0624d4bd-deec-44c0-9423-d8d199686f9e" />
 
-
 **Step 2:** 
 Get an idle(Vscode)
 
