@@ -63,21 +63,50 @@
         }
         .mode-toggle {
             position: absolute;
-            top: 0;
-            right: 0;
+            top: 15px;
+            right: 15px;
+            width: 60px;
+            height: 30px;
+        }
+        .mode-toggle input {
+            display: none;
+        }
+        .slider {
+            position: relative;
+            display: block;
+            width: 60px;
+            height: 30px;
             background: rgba(33, 37, 41, 0.1);
-            border: none;
-            padding: 8px;
-            border-radius: 50%;
+            border-radius: 30px;
             cursor: pointer;
             transition: background 0.3s;
         }
-        .mode-toggle:hover {
+        .mode-toggle:hover .slider {
             background: rgba(33, 37, 41, 0.2);
+        }
+        .knob {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 30px;
+            height: 30px;
+            transition: left 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         .mode-toggle img {
             width: 24px;
             height: 24px;
+        }
+        input:checked + .slider .knob {
+            left: 30px;
+        }
+        body.dark .slider {
+            background: rgba(248, 249, 250, 0.1);
+        }
+        body.dark .mode-toggle:hover .slider {
+            background: rgba(248, 249, 250, 0.2);
         }
         .section {
             margin: 30px 0;
@@ -141,17 +170,17 @@
     <div class="container">
         <header>
             <h1>Credits & Acknowledgments</h1>
-            <button class="mode-toggle" onclick="toggleMode()">
-                <img id="modeIcon" src="https://img.icons8.com/ios/50/212529/moon-symbol.png" alt="Dark Mode">
-            </button>
+            <label class="mode-toggle">
+                <input type="checkbox" id="toggle" onchange="toggleMode()">
+                <span class="slider">
+                    <span class="knob">
+                        <img id="modeIcon" src="https://img.icons8.com/ios/50/212529/moon-symbol.png" alt="Dark Mode">
+                    </span>
+                </span>
+            </label>
             <div class="section">
             <h2>Team:</h2>
             <div class="credits-grid">
-                <div class="credit-card">
-                    <h3>Asher</h3>
-                    <p>UI and Creative Designer</p>
-                    <a href="https://rsms.me/inter/" target="_blank">GitHub</a>
-                </div>
                 <div class="credit-card">
                     <h3>Sai Shashank</h3>
                     <p>Programmer and Group Leader</p>
@@ -160,6 +189,11 @@
                 <div class="credit-card">
                     <h3>Hrishi Parekh</h3>
                     <p>Programmer and Coordinator</p>
+                    <a href="https://rsms.me/inter/" target="_blank">GitHub</a>
+                </div>
+                <div class="credit-card">
+                    <h3>Asher</h3>
+                    <p>UI and Creative Designer</p>
                     <a href="https://rsms.me/inter/" target="_blank">GitHub</a>
                 </div>
             </div>
@@ -213,6 +247,8 @@
             const mode = localStorage.getItem('mode');
             if (mode === 'dark') {
                 document.body.classList.add('dark');
+                const toggleInput = document.getElementById('toggle');
+                if (toggleInput) toggleInput.checked = true;
                 const icon = document.getElementById('modeIcon');
                 if (icon) {
                     icon.src = 'https://img.icons8.com/ios/50/ffffff/sun--v1.png';
