@@ -80,7 +80,7 @@ Get an idle(Vscode)
 - Vscode: https://code.visualstudio.com/ (Install python extension)
 
 **Step 3:** 
-Extract zip and open in idle(Vscode)
+Extract zip and open in IDLE(Vscode)
 
 <img width="808" height="728" alt="image" src="https://github.com/user-attachments/assets/b6af7335-677b-4d61-b766-2c31a2cc0389" />
 
@@ -93,10 +93,12 @@ Install dependencies
 pip install Flask transformers torch PyPDF2 weasyprint Werkzeug
 
 ```
-Run in terminal of idle.
+Run in terminal of IDLE.
 
-**Step 5:** 
-Run app.py from idle
+**Step 5:**
+
+- Go to /project
+- Run app.py from IDLE
 
 <img width="1802" height="712" alt="image" src="https://github.com/user-attachments/assets/c31f02e4-ea6a-4614-9a66-68d14d2282fd" />
 
