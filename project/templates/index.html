@@ -68,19 +68,48 @@
             position: absolute;
             top: 15px;
             right: 15px;
+            width: 60px;
+            height: 30px;
+        }
+        .mode-toggle input {
+            display: none;
+        }
+        .slider {
+            position: relative;
+            display: block;
+            width: 60px;
+            height: 30px;
             background: rgba(33, 37, 41, 0.1);
-            border: none;
-            padding: 8px;
-            border-radius: 50%;
+            border-radius: 30px;
             cursor: pointer;
             transition: background 0.3s;
         }
-        .mode-toggle:hover {
+        .mode-toggle:hover .slider {
             background: rgba(33, 37, 41, 0.2);
+        }
+        .knob {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 30px;
+            height: 30px;
+            transition: left 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         .mode-toggle img {
             width: 24px;
             height: 24px;
+        }
+        input:checked + .slider .knob {
+            left: 30px;
+        }
+        body.dark .slider {
+            background: rgba(248, 249, 250, 0.1);
+        }
+        body.dark .mode-toggle:hover .slider {
+            background: rgba(248, 249, 250, 0.2);
         }
         .content {
             padding: 30px;
@@ -231,9 +260,14 @@
         <header>
             <h1>Prescribify</h1>
             <p class="subtitle">Upload a PDF Report • Get AI summary + Personalized Health Tips</p>
-            <button class="mode-toggle" onclick="toggleMode()">
-                <img id="modeIcon" src="https://img.icons8.com/ios/50/212529/moon-symbol.png" alt="Dark Mode">
-            </button>
+            <label class="mode-toggle">
+                <input type="checkbox" id="toggle" onchange="toggleMode()">
+                <span class="slider">
+                    <span class="knob">
+                        <img id="modeIcon" src="https://img.icons8.com/ios/50/212529/moon-symbol.png" alt="Dark Mode">
+                    </span>
+                </span>
+            </label>
         </header>
 
         <div class="content">
