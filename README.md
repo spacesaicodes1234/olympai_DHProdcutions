@@ -102,6 +102,9 @@ Run in terminal of idle.
 **Step 5:** 
 Run app.py from idle
 
+<img width="1802" height="712" alt="image" src="https://github.com/user-attachments/assets/c31f02e4-ea6a-4614-9a66-68d14d2282fd" />
+
+
 **Step 6:** 
 Open local host: 
 http://127.0.0.1:5000
