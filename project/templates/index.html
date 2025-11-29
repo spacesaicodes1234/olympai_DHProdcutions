@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         :root {
             --primary: #ffc107; /* Yellow theme */
+            --primary-dark: #e0a800; /* Darker yellow for hover */
             --secondary: #6c757d; /* Neutral gray */
             --accent: #fd7e14; /* Orange accent */
             --background-light: #ffffff; 
@@ -17,9 +19,12 @@
             --text-light: #6c757d; 
             --border: #dee2e6;
             --shadow: rgba(0, 0, 0, 0.05);
+            /* New variable for cleaner border hover */
+            --border-hover: var(--primary); 
         }
         body.dark {
             --primary: #ffc107; /* Keep yellow */
+            --primary-dark: #e0a800; 
             --secondary: #adb5bd;
             --accent: #fd7e14;
             --background-light: #212529; 
@@ -28,6 +33,7 @@
             --text-light: #adb5bd;
             --border: #495057;
             --shadow: rgba(0, 0, 0, 0.2);
+            --border-hover: var(--primary); 
         }
         body {
             font-family: 'Inter', 'Open Sans', sans-serif;
@@ -114,22 +120,79 @@
         .content {
             padding: 30px;
         }
+        
+        /* --- CLEANED-UP UPLOAD BOX STYLES --- */
         .upload-box {
+            /* Main container styling */
             border: 2px dashed var(--border);
-            border-radius: 8px;
-            padding: 40px 20px;
+            border-radius: 12px; 
+            padding: 30px; 
             text-align: center;
             background: var(--background-light);
-            transition: border-color 0.3s, background 0.3s;
+            color: var(--text-dark);
+            transition: all 0.3s ease; 
+            cursor: pointer; 
+            max-width: 400px; 
+            margin: 20px auto; 
         }
+
+        /* Hover effect on the box */
         .upload-box:hover {
-            border-color: var(--primary);
+            border-color: var(--border-hover);
             background: var(--background-dark);
         }
-        .upload-box input[type="file"] {
-            margin-top: 12px;
-            font-size: 1rem;
+
+        /* Icon styling */
+        .upload-icon {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 3rem; /* Larger icon */
         }
+
+        /* Header styling */
+        .upload-box h3 {
+            margin-top: 0; 
+            margin-bottom: 5px;
+            font-size: 1.4rem;
+            color: var(--primary); 
+        }
+
+        /* Support text styling */
+        .upload-support {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        /* Custom label/button styling */
+        .upload-label {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--primary);
+            color: var(--text-dark); /* Dark text for yellow button */
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            margin-top: 10px;
+            transition: background-color 0.2s ease, transform 0.2s;
+        }
+
+        .upload-label:hover {
+            background-color: var(--primary-dark); 
+            transform: translateY(-1px);
+        }
+
+        /* Placeholder for showing the file name after selection */
+        .file-name {
+            display: block;
+            margin-top: 15px;
+            font-style: italic;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+        
+        /* --- END CLEANED-UP UPLOAD BOX STYLES --- */
+        
         .controls {
             display: flex;
             gap: 20px;
@@ -273,9 +336,18 @@
         <div class="content">
             <form method="post" enctype="multipart/form-data">
                 <div class="upload-box">
-                    <h3>Upload Medical Report (PDF)</h3>
-                    <p>Supports digital & scanned PDFs • Max 16MB</p>
-                    <input type="file" name="pdf_file" accept=".pdf" required>
+                    <div class="upload-icon">
+                        <i class="fas fa-cloud-upload-alt"></i> </div>
+                    <h3>Upload Medical Report</h3>
+                    <p class="upload-support">Supports digital & scanned PDFs • Max **16MB**</p>
+                    
+                    <input type="file" id="pdf_upload" name="pdf_file" accept=".pdf" required style="display: none;">
+                    
+                    <label for="pdf_upload" class="upload-label">
+                        <span class="upload-button-text">Choose File or Drag Here</span>
+                    </label>
+                    
+                    <p class="file-name" id="file_name">No file selected.</p>
                 </div>
 
                 <div class="controls">
@@ -308,7 +380,7 @@
                     AI-Generated Summary
                     <a href="/download_summary?summary={{ summary|urlencode }}&filename={{ filename|default('report') }}&tips={{ health_tips|join('|||')|urlencode }}" 
                        class="action-btn pdf-btn">Download PDF with Tips</a>
-                    <button class="action-btn" onclick="copySummary()">Copy Summary</button>
+                    <button class="action-btn" onclick="copySummary(event)">Copy Summary</button>
                 </div>
                 <div class="summary-text" id="summaryText">
                     {{ summary }}
@@ -330,8 +402,7 @@
                 </ul>
                 <p><em>These are general wellness tips • Always consult your doctor before making changes.</em></p>
             </div>
-            {% endif %}  
-
+            {% endif %} 
         </div>
 
         <footer>
@@ -355,7 +426,8 @@
                 icon.alt = 'Dark Mode';
             }
         }
-        function copySummary() {
+        
+        function copySummary(event) {
             const text = document.getElementById('summaryText').innerText;
             navigator.clipboard.writeText(text).then(() => {
                 const btn = event.target;
@@ -366,6 +438,25 @@
                 alert('Copy failed — please select and copy manually');
             });
         }
+        
+        // --- NEW JAVASCRIPT FOR CLEANER UPLOAD INPUT ---
+        document.getElementById('pdf_upload').addEventListener('change', function() {
+            const fileNameDisplay = document.getElementById('file_name');
+            const uploadButtonText = document.querySelector('.upload-button-text');
+            const file = this.files[0];
+
+            if (file) {
+                // Show the selected file name
+                fileNameDisplay.textContent = `Selected File: ${file.name}`;
+                // Change button text to reflect selection
+                uploadButtonText.textContent = 'Change File';
+            } else {
+                // Reset to default state
+                fileNameDisplay.textContent = 'No file selected.';
+                uploadButtonText.textContent = 'Choose File or Drag Here';
+            }
+        });
+        // --- END NEW JAVASCRIPT ---
     </script>
 </body>
 </html>
