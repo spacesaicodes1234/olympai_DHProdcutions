@@ -11,17 +11,16 @@ Perfect for doctors, nurses, medical students, researchers, and anyone managing 
 
 **light mode:**
 
-<img width="964" height="885" alt="image" src="https://github.com/user-attachments/assets/f8199f1f-820e-467b-bdb3-c061b6b825a4" />
-<img width="1004" height="591" alt="image" src="https://github.com/user-attachments/assets/b080a447-4569-4f46-b12d-22ce12d5f42c" />
-
+<img width="980" height="877" alt="image" src="https://github.com/user-attachments/assets/bc94c3fe-9d49-4836-a8f5-aef2eb12f4e6" />
+<img width="976" height="592" alt="image" src="https://github.com/user-attachments/assets/882ee9dc-7eec-4c6f-bd00-68b6f9316323" />
 
 <br/>
 <br/>
 
 **dark mode:**
 
-<img width="952" height="865" alt="image" src="https://github.com/user-attachments/assets/3dad04e9-9af1-41a7-b51e-89f3972262c0" />
-<img width="971" height="609" alt="image" src="https://github.com/user-attachments/assets/19a24bc9-84ca-4b23-8fac-3d2e795cc56a" />
+<img width="948" height="876" alt="image" src="https://github.com/user-attachments/assets/0151b026-0680-4dfb-998c-c9d93a526a5e" />
+<img width="989" height="605" alt="image" src="https://github.com/user-attachments/assets/9e3d8951-fbab-4635-a8e8-444bf587b3a3" />
 
 ---
 
