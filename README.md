@@ -77,8 +77,22 @@ Downlaod python from www.python.org
 Downlaod zip from github repo
 <img width="1691" height="652" alt="image" src="https://github.com/user-attachments/assets/b1e64938-c826-4338-a22f-a219ebaef693" />
 
+**Step3:** 
+Get an idle(Vscode,thonny,pycharm,etc)
 
+Vscode: https://code.visualstudio.com/
+Thonny: https://thonny.org/
+pycharm: https://www.jetbrains.com/pycharm/
 
+**Step4:** 
+Extract zip and open in idle
+
+**Step5:** 
+Run app.py from idle
+
+**Step6:** 
+Open local host: 
+http://127.0.0.1:5000
 
 ---
 
