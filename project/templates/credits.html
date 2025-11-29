@@ -8,18 +8,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #ffc107; /* Yellow theme */
-            --secondary: #6c757d; /* Neutral gray */
-            --accent: #fd7e14; /* Orange accent */
+            --primary: #ffc107; 
+            --secondary: #6c757d; 
+            --accent: #fd7e14; 
             --background-light: #ffffff; 
-            --background-dark: #fff3cd; /* Light yellow bg */
+            --background-dark: #fff3cd; 
             --text-dark: #212529; 
             --text-light: #6c757d; 
             --border: #dee2e6;
             --shadow: rgba(0, 0, 0, 0.05);
         }
         body.dark {
-            --primary: #ffc107; /* Keep yellow */
+            --primary: #ffc107; 
             --secondary: #adb5bd;
             --accent: #fd7e14;
             --background-light: #212529; 
@@ -265,17 +265,13 @@
             }
         }
         
-        // Function to run on page load
         window.onload = function() {
-            // 1. Get saved preference or default to 'dark' if it's the first visit (null)
             const mode = localStorage.getItem('mode') || 'dark'; 
             
-            // 2. Set the default for the first visit if it hasn't been set yet
             if (localStorage.getItem('mode') === null) {
                 localStorage.setItem('mode', 'dark');
             }
             
-            // 3. Apply the mode
             updateModeElements(mode === 'dark');
         };
 
@@ -283,13 +279,10 @@
             const isCurrentlyDark = document.body.classList.contains('dark');
             const newIsDark = !isCurrentlyDark;
             
-            // 1. Update the display
             updateModeElements(newIsDark); 
             
-            // 2. Save the preference
             localStorage.setItem('mode', newIsDark ? 'dark' : 'light');
         }
-        // *** END - Mode Persistence Logic ***
     </script>
 </body>
 </html>
