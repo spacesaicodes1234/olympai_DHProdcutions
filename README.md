@@ -41,9 +41,9 @@ Perfect for doctors, nurses, medical students, researchers, and anyone managing 
 
 ---
 
-### Running the webapp
+## Running the webapp
 
-## Prerequisites
+### Prerequisites
 
 **Downlaod and install python from www.python.org**
 
