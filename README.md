@@ -70,27 +70,27 @@ Upload a medical report → Get AI summary → Download or copy!
 
 ### Method 2
 
-**Step1:** 
+**Step 1:** 
 Downlaod python from www.python.org
 
-**Step2:** 
+**Step 2:** 
 Downlaod zip from github repo
 <img width="1691" height="652" alt="image" src="https://github.com/user-attachments/assets/b1e64938-c826-4338-a22f-a219ebaef693" />
 
-**Step3:** 
+**Step 3:** 
 Get an idle(Vscode,thonny,pycharm,etc)
 
-- Vscode: https://code.visualstudio.com/
+- Vscode: https://code.visualstudio.com/ (Install python extension)
 - Thonny: https://thonny.org/
 - pycharm: https://www.jetbrains.com/pycharm/
 
-**Step4:** 
+**Step 4:** 
 Extract zip and open in idle
 
-**Step5:** 
+**Step 5:** 
 Run app.py from idle
 
-**Step6:** 
+**Step 6:** 
 Open local host: 
 http://127.0.0.1:5000
 
