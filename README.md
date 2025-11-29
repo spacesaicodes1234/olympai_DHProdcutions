@@ -77,7 +77,8 @@ Upload a medical report → Get AI summary → Download or copy!
 **Step 1:** 
 Downlaod zip file from the GitHub repository on this website using the highlighted box below:
 
-<img width="1691" height="652" alt="image" src="https://github.com/user-attachments/assets/b1e64938-c826-4338-a22f-a219ebaef693" />
+<img width="1605" height="631" alt="image" src="https://github.com/user-attachments/assets/0624d4bd-deec-44c0-9423-d8d199686f9e" />
+
 
 **Step 2:** 
 Get an idle(Vscode)
