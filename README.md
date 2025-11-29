@@ -20,12 +20,8 @@ Perfect for doctors, nurses, medical students, researchers, and anyone managing 
 
 **dark mode:**
 
-<img width="1191" height="927" alt="image" src="https://github.com/user-attachments/assets/aaddf408-6650-4fee-b0a8-8d3928a208d2" />
-<img width="1259" height="742" alt="image" src="https://github.com/user-attachments/assets/0dbac3c6-6456-497d-9eee-c8ffd59b146a" />
-
-
-
-
+<img width="952" height="865" alt="image" src="https://github.com/user-attachments/assets/3dad04e9-9af1-41a7-b51e-89f3972262c0" />
+<img width="971" height="609" alt="image" src="https://github.com/user-attachments/assets/19a24bc9-84ca-4b23-8fac-3d2e795cc56a" />
 
 ---
 
