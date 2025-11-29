@@ -30,7 +30,7 @@ Perfect for doctors, nurses, medical students, researchers, and anyone managing 
 - Upload any medical PDF (digital or scanned)
 - Smart text extraction with PyPDF2
 - Abstractive summarization using **T5 (Google/Hugging Face)**
-- Adjustable summary length (short, medium, detailed)
+- Adjustable summary length 
 - One-click **"Copy to Clipboard"**
 - One-click **"Download as Professional PDF"** (with date, filename, disclaimer)
 - Modern, responsive, medical-grade UI
