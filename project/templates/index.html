@@ -9,12 +9,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         :root {
-            --primary: #ffc107; /* Yellow theme */
-            --primary-dark: #e0a800; /* Darker yellow for hover */
-            --secondary: #6c757d; /* Neutral gray */
-            --accent: #fd7e14; /* Orange accent */
+            --primary: #ffc107; 
+            --primary-dark: #e0a800; 
+            --secondary: #6c757d; 
+            --accent: #fd7e14; 
             --background-light: #ffffff; 
-            --background-dark: #fff3cd; /* Light yellow bg */
+            --background-dark: #fff3cd; 
             --text-dark: #212529; 
             --text-light: #6c757d; 
             --border: #dee2e6;
@@ -120,22 +120,17 @@
             padding: 30px;
         }
         
-        /* --- CLEANED-UP & ALIGNED UPLOAD BOX STYLES --- */
         .upload-box {
             min-height: 180px; 
             border: 2px dashed var(--border);
             border-radius: 12px; 
-            /* Added back general padding */
             padding: 30px 20px; 
             text-align: center;
             background: var(--background-light);
             color: var(--text-dark);
             transition: all 0.3s ease; 
             cursor: pointer; 
-            
-            /* KEY CHANGE 1: Removed max-width and auto margins for full width alignment */
-            /* max-width: 400px; */
-            margin: 20px 0; /* Align with summary card, which is within .content padding */
+            margin: 20px 0; 
         }
 
         .upload-box:hover {
@@ -162,17 +157,15 @@
             margin-bottom: 20px;
         }
 
-        /* KEY CHANGE 2: Reset label to look like a standard button */
         .upload-label {
-            display: inline-block; /* Make it fit content width */
-            padding: 10px 20px; /* Standard button padding */
+            display: inline-block; 
+            padding: 10px 20px; 
             background-color: var(--primary);
             color: var(--text-dark); 
             font-weight: 600;
             cursor: pointer;
             transition: background-color 0.2s ease;
             
-            /* Reset negative margins and border radius from full-width attempt */
             margin: 10px auto; 
             border-radius: 8px; 
         }
@@ -187,9 +180,8 @@
             font-style: italic;
             font-weight: 500;
             color: var(--text-dark);
-            padding-bottom: 0; /* Resetting padding */
+            padding-bottom: 0;
         }
-        /* --- END UPLOAD BOX STYLES --- */
 
         .controls {
             display: flex;
@@ -414,7 +406,6 @@
     </div>
 
     <script>
-        // *** START - Mode Persistence Logic ***
         function updateModeElements(isDark) {
             const icon = document.getElementById('modeIcon');
             const toggleInput = document.getElementById('toggle');
@@ -436,17 +427,13 @@
             }
         }
         
-        // Function to run on page load
         window.onload = function() {
-            // 1. Get saved preference or default to 'dark' if it's the first visit (null)
             const mode = localStorage.getItem('mode') || 'dark'; 
             
-            // 2. Set the default for the first visit if it hasn't been set yet
             if (localStorage.getItem('mode') === null) {
                 localStorage.setItem('mode', 'dark');
             }
             
-            // 3. Apply the mode
             updateModeElements(mode === 'dark');
         };
 
@@ -454,13 +441,10 @@
             const isCurrentlyDark = document.body.classList.contains('dark');
             const newIsDark = !isCurrentlyDark;
             
-            // 1. Update the display
             updateModeElements(newIsDark); 
             
-            // 2. Save the preference
             localStorage.setItem('mode', newIsDark ? 'dark' : 'light');
         }
-        // *** END - Mode Persistence Logic ***
         
         function copySummary(event) {
             const text = document.getElementById('summaryText').innerText;
@@ -474,19 +458,15 @@
             });
         }
         
-        // JAVASCRIPT FOR CLEANER UPLOAD INPUT
         document.getElementById('pdf_upload').addEventListener('change', function() {
             const fileNameDisplay = document.getElementById('file_name');
             const uploadButtonText = document.querySelector('.upload-button-text');
             const file = this.files[0];
 
             if (file) {
-                // Show the selected file name
                 fileNameDisplay.textContent = `Selected File: ${file.name}`;
-                // Change button text to reflect selection
                 uploadButtonText.textContent = 'Change File';
             } else {
-                // Reset to default state
                 fileNameDisplay.textContent = 'No file selected.';
                 uploadButtonText.textContent = 'Choose File or Drag Here';
             }
@@ -494,3 +474,4 @@
     </script>
 </body>
 </html>
+
