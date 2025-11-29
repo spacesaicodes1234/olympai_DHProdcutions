@@ -44,7 +44,9 @@ http://127.0.0.1:5000
 
 ---
 
-### Quick Start
+### Method 1
+
+**Quick Start**
 
 ```bash
 # 1. Clone the repo
