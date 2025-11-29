@@ -184,5 +184,5 @@ def download_summary():
                      download_name=f"Health_Summary_{os.path.splitext(filename)[0]}_{datetime.now().strftime('%Y%m%d')}.pdf",
                      mimetype='application/pdf')
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     app.run(debug=True)
