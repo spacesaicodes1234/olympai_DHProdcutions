@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Credits & Acknowledgments • Medical Report Summarizer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Fonts Used -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
@@ -170,6 +171,7 @@
     <div class="container">
         <header>
             <h1>Credits & Acknowledgments</h1>
+            <!-- Dark Mode & Light Mode Toggle -->
             <label class="mode-toggle">
                 <input type="checkbox" id="toggle" onchange="toggleMode()">
                 <span class="slider">
@@ -180,6 +182,7 @@
             </label>
             <div class="section">
             <h2>Team:</h2>
+            <!-- Members of our Team -->
             <div class="credits-grid">
                 <div class="credit-card">
                     <h3>Sai Shashank</h3>
@@ -201,6 +204,7 @@
         </header>
 
         <div class="section">
+            <!-- Acknowledgements to external resources used -->
             <h2>Core AI Model</h2>
             <div class="credits-grid">
                 <div class="credit-card">
@@ -243,11 +247,10 @@
     </div>
 
     <script>
-        // *** START - Mode Persistence Logic ***
         function updateModeElements(isDark) {
             const icon = document.getElementById('modeIcon');
             const toggleInput = document.getElementById('toggle');
-            
+            // Changes the icon related to the lightmode-darkmode toggle
             if (isDark) {
                 document.body.classList.add('dark');
                 if (icon) {
@@ -264,7 +267,7 @@
                 if (toggleInput) toggleInput.checked = false;
             }
         }
-        
+        // Sets to dark mode on default startup
         window.onload = function() {
             const mode = localStorage.getItem('mode') || 'dark'; 
             
@@ -274,7 +277,7 @@
             
             updateModeElements(mode === 'dark');
         };
-
+        // Stores the preference of the user (i.e. darkmode or lightmode) while swapping pages (index.html and credits.html)
         function toggleMode() {
             const isCurrentlyDark = document.body.classList.contains('dark');
             const newIsDark = !isCurrentlyDark;
