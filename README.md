@@ -80,11 +80,9 @@ Downlaod zip file from the GitHub repository on this website using the highlight
 <img width="1691" height="652" alt="image" src="https://github.com/user-attachments/assets/b1e64938-c826-4338-a22f-a219ebaef693" />
 
 **Step 2:** 
-Get an idle(Vscode,thonny,pycharm,etc)
+Get an idle(Vscode)
 
 - Vscode: https://code.visualstudio.com/ (Install python extension)
-- Thonny: https://thonny.org/
-- pycharm: https://www.jetbrains.com/pycharm/
 
 **Step 3:** 
 Extract zip and open in idle
