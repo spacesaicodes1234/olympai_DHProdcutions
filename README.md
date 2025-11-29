@@ -48,6 +48,8 @@ http://127.0.0.1:5000
 
 **Quick Start**
 
+Downlaod python from www.python.org
+
 ```bash
 # 1. Clone the repo
 git clone https://github.com/spacesaicodes1234/olympai_DHProdcutions.git
@@ -88,9 +90,17 @@ Get an idle(Vscode,thonny,pycharm,etc)
 Extract zip and open in idle
 
 **Step 5:** 
-Run app.py from idle
+Install dependencies
+```bash
+
+pip install Flask transformers torch PyPDF2 weasyprint Werkzeug
+
+```
 
 **Step 6:** 
+Run app.py from idle
+
+**Step 7:** 
 Open local host: 
 http://127.0.0.1:5000
 
