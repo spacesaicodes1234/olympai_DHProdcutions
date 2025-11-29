@@ -10,12 +10,10 @@ Perfect for doctors, nurses, medical students, researchers, and anyone managing 
 ### Screenshots:
 
 **light mode:**
-
 <img width="1250" height="929" alt="image" src="https://github.com/user-attachments/assets/6a874b82-6e77-4338-8f05-f5a74158a544" />
 <img width="1306" height="738" alt="image" src="https://github.com/user-attachments/assets/ae483b89-c156-4613-b0e4-665164938db3" />
 
 **dark mode:**
-
 <img width="1191" height="927" alt="image" src="https://github.com/user-attachments/assets/aaddf408-6650-4fee-b0a8-8d3928a208d2" />
 <img width="1259" height="742" alt="image" src="https://github.com/user-attachments/assets/0dbac3c6-6456-497d-9eee-c8ffd59b146a" />
 
