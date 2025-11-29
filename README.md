@@ -97,6 +97,7 @@ Install dependencies
 pip install Flask transformers torch PyPDF2 weasyprint Werkzeug
 
 ```
+Run in terminal of idle.
 
 **Step 6:** 
 Run app.py from idle
