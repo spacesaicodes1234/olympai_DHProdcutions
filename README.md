@@ -53,15 +53,14 @@ git clone https://github.com/spacesaicodes1234/olympai_DHProdcutions.git
 cd olympai_DHProdcutions
 cd project
 
-# 2. Create virtual environment (recommended)
+# 2. Install dependencies
+pip install Flask transformers torch PyPDF2 weasyprint Werkzeug
+
+# 3. Create virtual environment (recommended)
 python -m venv venv
 source venv/bin/activate        # On Windows: venv\Scripts\activate
 
 python app.py
-
-# 3. Install dependencies
-pip install Flask transformers torch PyPDF2 weasyprint Werkzeug
-
 ```
 
 Open your browser → http://127.0.0.1:5000
