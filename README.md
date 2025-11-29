@@ -86,6 +86,7 @@ Get an idle(Vscode)
 
 **Step 3:** 
 Extract zip and open in idle
+
 <img width="808" height="728" alt="image" src="https://github.com/user-attachments/assets/b6af7335-677b-4d61-b766-2c31a2cc0389" />
 
 
@@ -106,6 +107,7 @@ Run app.py from idle
 
 
 **Step 6:** 
+
 Open local host: 
 http://127.0.0.1:5000
 
