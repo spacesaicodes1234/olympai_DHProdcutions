@@ -243,35 +243,53 @@
     </div>
 
     <script>
-        window.onload = function() {
-            const mode = localStorage.getItem('mode');
-            if (mode === 'dark') {
+        // *** START - Mode Persistence Logic ***
+        function updateModeElements(isDark) {
+            const icon = document.getElementById('modeIcon');
+            const toggleInput = document.getElementById('toggle');
+            
+            if (isDark) {
                 document.body.classList.add('dark');
-                const toggleInput = document.getElementById('toggle');
-                if (toggleInput) toggleInput.checked = true;
-                const icon = document.getElementById('modeIcon');
                 if (icon) {
-                    icon.src = 'https://img.icons8.com/ios/50/ffffff/sun--v1.png';
+                    icon.src = 'https://img.icons8.com/?size=100&id=GIywaBFJCJiI&format=png&color=FFFFFF';
                     icon.alt = 'Light Mode';
                 }
+                if (toggleInput) toggleInput.checked = true;
+            } else {
+                document.body.classList.remove('dark');
+                if (icon) {
+                    icon.src = 'https://img.icons8.com/?size=100&id=45475&format=png&color=000000';
+                    icon.alt = 'Dark Mode';
+                }
+                if (toggleInput) toggleInput.checked = false;
             }
+        }
+        
+        // Function to run on page load
+        window.onload = function() {
+            // 1. Get saved preference or default to 'dark' if it's the first visit (null)
+            const mode = localStorage.getItem('mode') || 'dark'; 
+            
+            // 2. Set the default for the first visit if it hasn't been set yet
+            if (localStorage.getItem('mode') === null) {
+                localStorage.setItem('mode', 'dark');
+            }
+            
+            // 3. Apply the mode
+            updateModeElements(mode === 'dark');
         };
 
         function toggleMode() {
-            document.body.classList.toggle('dark');
-            const isDark = document.body.classList.contains('dark');
-            localStorage.setItem('mode', isDark ? 'dark' : 'light');
-            const icon = document.getElementById('modeIcon');
-            if (icon) {
-                if (isDark) {
-                    icon.src = 'https://img.icons8.com/ios/50/ffffff/sun--v1.png';
-                    icon.alt = 'Light Mode';
-                } else {
-                    icon.src = 'https://img.icons8.com/ios/50/212529/moon-symbol.png';
-                    icon.alt = 'Dark Mode';
-                }
-            }
+            const isCurrentlyDark = document.body.classList.contains('dark');
+            const newIsDark = !isCurrentlyDark;
+            
+            // 1. Update the display
+            updateModeElements(newIsDark); 
+            
+            // 2. Save the preference
+            localStorage.setItem('mode', newIsDark ? 'dark' : 'light');
         }
+        // *** END - Mode Persistence Logic ***
     </script>
 </body>
 </html>
