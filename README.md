@@ -11,8 +11,9 @@ Perfect for doctors, nurses, medical students, researchers, and anyone managing 
 
 **light mode:**
 
-<img width="1250" height="929" alt="image" src="https://github.com/user-attachments/assets/6a874b82-6e77-4338-8f05-f5a74158a544" />
-<img width="1306" height="738" alt="image" src="https://github.com/user-attachments/assets/ae483b89-c156-4613-b0e4-665164938db3" />
+<img width="964" height="885" alt="image" src="https://github.com/user-attachments/assets/f8199f1f-820e-467b-bdb3-c061b6b825a4" />
+<img width="1004" height="591" alt="image" src="https://github.com/user-attachments/assets/b080a447-4569-4f46-b12d-22ce12d5f42c" />
+
 
 <br/>
 <br/>
