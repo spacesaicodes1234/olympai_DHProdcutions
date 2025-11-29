@@ -4,35 +4,36 @@
     <meta charset="UTF-8">
     <title>Medical Report Summarizer • T5 AI</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Fonts Used -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         :root {
-            --primary: #ffc107; 
-            --primary-dark: #e0a800; 
-            --secondary: #6c757d; 
-            --accent: #fd7e14; 
-            --background-light: #ffffff; 
-            --background-dark: #fff3cd; 
-            --text-dark: #212529; 
-            --text-light: #6c757d; 
-            --border: #dee2e6;
-            --shadow: rgba(0, 0, 0, 0.05);
+            /* NEW BLUE PALETTE (https://color.adobe.com/cal-Blue-color-theme-7463915/) - Light Mode */
+            --primary: #1C7595; 
+            --primary-dark: #165A71; 
+            --secondary: #7F8C8D; 
+            --accent: #004358; 
+            --background-light: #FAFAFA; /* Main card/container background */
+            --background-dark: #E5F2F7; /* Body/Secondary background */
+            --text-dark: #2C3E50; 
+            --text-light: #7F8C8D; 
+            --border: #BDC3C7;
+            --shadow: rgba(0, 0, 0, 0.1);
             --border-hover: var(--primary); 
         }
         body.dark {
-            --primary: #ffc107; 
-            --primary-dark: #e0a800; 
-            --secondary: #adb5bd;
-            --accent: #fd7e14;
-            --background-light: #212529; 
-            --background-dark: #343a40; 
-            --text-dark: #f8f9fa; 
-            --text-light: #adb5bd;
-            --border: #495057;
-            --shadow: rgba(0, 0, 0, 0.2);
+            /* NEW BLUE PALETTE (https://color.adobe.com/cal-Blue-color-theme-7463915/) - Dark Mode */
+            --primary: #4392B7; 
+            --primary-dark: #357791; 
+            --secondary: #A9B7C0;
+            --accent: #002D3C;
+            --background-light: #1A1A1A; /* Main card/container background */
+            --background-dark: #2A2A2A; /* Body/Secondary background */
+            --text-dark: #F0F0F0; 
+            --text-light: #A9B7C0;
+            --border: #404040;
+            --shadow: rgba(0, 0, 0, 0.4);
             --border-hover: var(--primary); 
         }
         body {
@@ -54,7 +55,7 @@
         }
         header {
             background: var(--primary);
-            color: #212529; 
+            color: var(--background-light); /* Ensure text is visible on primary color */
             padding: 30px;
             text-align: center;
             position: relative;
@@ -85,13 +86,14 @@
             display: block;
             width: 60px;
             height: 30px;
-            background: rgba(33, 37, 41, 0.1);
+            /* Using a transparent version of text-dark/text-light for slider background */
+            background: rgba(44, 62, 80, 0.2); 
             border-radius: 30px;
             cursor: pointer;
             transition: background 0.3s;
         }
         .mode-toggle:hover .slider {
-            background: rgba(33, 37, 41, 0.2);
+            background: rgba(44, 62, 80, 0.4); 
         }
         .knob {
             position: absolute;
@@ -112,10 +114,10 @@
             left: 30px;
         }
         body.dark .slider {
-            background: rgba(248, 249, 250, 0.1);
+            background: rgba(240, 240, 240, 0.2); /* Light transparent background for dark mode slider */
         }
         body.dark .mode-toggle:hover .slider {
-            background: rgba(248, 249, 250, 0.2);
+            background: rgba(240, 240, 240, 0.4); 
         }
         .content {
             padding: 30px;
@@ -125,7 +127,6 @@
             min-height: 180px; 
             border: 2px dashed var(--border);
             border-radius: 12px; 
-            /* Added back general padding */
             padding: 30px 20px; 
             text-align: center;
             background: var(--background-light);
@@ -163,7 +164,7 @@
             display: inline-block; 
             padding: 10px 20px; 
             background-color: var(--primary);
-            color: var(--text-dark); 
+            color: var(--background-light); /* Changed to use light background for better contrast on primary */
             font-weight: 600;
             cursor: pointer;
             transition: background-color 0.2s ease;
@@ -185,23 +186,50 @@
         }
 
         .controls {
-            display: flex;
-            gap: 20px;
             margin: 20px 0;
-            flex-wrap: wrap;
+            text-align: center;
         }
-        .control-group {
-            flex: 1;
-            min-width: 180px;
-        }
-        label {
+        
+        /* Summary Controls */
+        .summary-length-box {
             display: block;
+            /* max-width: 400px; */
+            /* min-width: 300px; */
+            margin: 20px auto 30px auto; 
+            
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            padding: 20px; 
+            background: var(--background-light); 
+            box-shadow: none; 
+            text-align: center; 
+            transition: all 0.3s ease; 
+        }
+        .summary-length-box:hover {
+            border-color: var(--border-hover);
+            background: var(--background-dark);
+        }
+
+        .control-group {
+            display: block;
+            /* max-width: 250px; */
+            /* width: 100%;  */
+            margin: 15px auto; 
+            padding: 0;
+            text-align: center; 
+        }
+        
+        label {
+            display: block; 
             margin-bottom: 6px;
             font-weight: 500;
-            color: var(--text-light);
+            color: var(--text-dark);
+            text-align: center; 
         }
+        
         input[type="number"] {
-            width: 100%;
+            width: 100%; 
+            max-width: 250px;
             padding: 10px;
             border: 1px solid var(--border);
             border-radius: 6px;
@@ -209,10 +237,16 @@
             background: var(--background-light);
             color: var(--text-dark);
             transition: border-color 0.3s, background 0.3s;
+            text-align: center; 
         }
+        input[type="number"]:focus {
+            border-color: var(--primary);
+            outline: none;
+        }
+
         button {
             background: var(--primary);
-            color: #212529;
+            color: var(--background-light); /* Changed to use light background for better contrast on primary */
             border: none;
             padding: 12px 28px;
             font-size: 1rem;
@@ -222,7 +256,7 @@
             transition: background 0.3s, transform 0.3s;
         }
         button:hover {
-            background: #e0a800;
+            background: var(--primary-dark);
             transform: translateY(-1px);
         }
         .summary-card {
@@ -265,13 +299,14 @@
             transition: background 0.3s;
         }
         .action-btn:hover {
-            background: #e06c13;
+            /* Using accent-dark equivalent or a slight change */
+            background: #003647; 
         }
         .pdf-btn {
             background: var(--accent);
         }
         .pdf-btn:hover {
-            background: #e06c13;
+            background: #003647;
         }
         .tips {
             margin-top: 25px;
@@ -282,7 +317,7 @@
             transition: background 0.3s;
         }
         .tips h3 {
-            color: var(--accent);
+            color: var(--primary);
             margin-top: 0;
             font-size: 1.2rem;
         }
@@ -297,9 +332,10 @@
             padding: 12px;
             margin: 15px 0;
             border-radius: 6px;
-            background: #fff3cd;
-            border: 1px solid #ffeeba;
-            color: #856404;
+            /* Using a light red/warning style for flash message */
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
         }
         footer {
             text-align: center;
@@ -314,20 +350,17 @@
         <header>
             <h1>Prescribify</h1>
             <p class="subtitle">Upload a PDF Report • Get AI summary + Personalized Health Tips</p>
-            <!-- Light-mode/Dark-mode toggle Slider -->
             <label class="mode-toggle">
                 <input type="checkbox" id="toggle" onchange="toggleMode()">
                 <span class="slider">
                     <span class="knob">
-                        <img id="modeIcon" src="https://img.icons8.com/ios/50/212529/moon-symbol.png" alt="Dark Mode">
+                        <img id="modeIcon" src="https://img.icons8.com/?size=100&id=45475&format=png&color=000000" alt="Dark Mode">
                     </span>
                 </span>
             </label>
         </header>
-        <!-- The main section of the code -->
         <div class="content">
             <form method="post" enctype="multipart/form-data">
-                <!-- The part where the user is supposed to upload his medical report -->
                 <div class="upload-box">
                     <div class="upload-icon">
                         <i class="fas fa-cloud-upload-alt"></i>
@@ -339,23 +372,25 @@
                     <label for="pdf_upload" class="upload-label">
                         <span class="upload-button-text">Choose File</span>
                     </label>
+                    <span class="file-name" id="file_name"></span>
                 </div>
 
                 <div class="controls">
-                <!-- The parameters for the summary taken from the user -->
-                    <div class="control-group">
-                        <label for="min_length">Minimum Summary Length</label>
-                        <input type="number" id="min_length" name="min_length" value="{{ min_length|default(60) }}" min="30" max="200">
-                    </div>
-                    <div class="control-group">
-                        <label for="max_length">Maximum Summary Length</label>
-                        <input type="number" id="max_length" name="max_length" value="{{ max_length|default(180) }}" min="80" max="512">
+                    <div class="summary-length-box">
+                        <h3 style="color:var(--primary); margin-top:5px; margin-bottom: 20px; font-size: 1.2rem;">Summary Length Parameters</h3>
+                        <div class="control-group summary-control-item">
+                            <label for="min_length">Minimum Summary Length (words)</label>
+                            <input type="number" id="min_length" name="min_length" value="{{ min_length|default(60) }}" min="30" max="200">
+                        </div>
+                        <div class="control-group summary-control-item">
+                            <label for="max_length">Maximum Summary Length (words)</label>
+                            <input type="number" id="max_length" name="max_length" value="{{ max_length|default(180) }}" min="80" max="512">
+                        </div>
                     </div>
                 </div>
 
                 <div style="text-align:center; margin:25px 0;">
-                <!-- Generate summary button -->
-                    <button type="submit">Generate Summary & Tips</button>
+                <button type="submit">Generate Summary & Tips</button>
                 </div>
             </form>
 
@@ -370,15 +405,13 @@
             {% if summary %}
             <div class="summary-card">
                 <div class="summary-title">
-                <!-- Download/Copy the AI Made Summary of the Report -->
-                    AI-Generated Summary
+                AI-Generated Summary
                     <a href="/download_summary?summary={{ summary|urlencode }}&filename={{ filename|default('report') }}&tips={{ health_tips|join('|||')|urlencode }}" 
                         class="action-btn pdf-btn">Download PDF with Tips</a>
                     <button class="action-btn" onclick="copySummary(event)">Copy Summary</button>
                 </div>
                 <div class="summary-text" id="summaryText">
-                <!-- The AI Made Summary of the Report -->
-                    {{ summary }}
+                {{ summary }}
                 </div>
                 {% if filename %}
                 <p style="margin-top:15px; color:var(--text-light); font-size:0.9rem;">
@@ -388,8 +421,7 @@
             </div>
 
             <div class="tips">
-            <!-- General tips given by the ai based on the submitted medical report -->
-                <h3>Personal Health Recommendations</h3>
+            <h3>Personal Health Recommendations</h3>
                 <p>Based on your report, here are some safe, general suggestions:</p>
                 <ul>
                     {% for tip in health_tips %}
@@ -402,7 +434,6 @@
         </div>
 
         <footer>
-            <!-- Footer which includes a hyperlink to the credits page and the team name and date of publishing -->
             <a href="{{ url_for('credits') }}" style="color:var(--primary); text-decoration:none;">Credits & Acknowledgments</a>
             <br><br>
             Powered by T5 • Built for healthcare • Privacy-First
@@ -420,6 +451,7 @@
             if (isDark) {
                 document.body.classList.add('dark');
                 if (icon) {
+                    // Update icon source for dark mode (sun icon, light color)
                     icon.src = 'https://img.icons8.com/?size=100&id=GIywaBFJCJiI&format=png&color=FFFFFF';
                     icon.alt = 'Light Mode';
                 }
@@ -427,6 +459,7 @@
             } else {
                 document.body.classList.remove('dark');
                 if (icon) {
+                    // Update icon source for light mode (moon icon, dark color)
                     icon.src = 'https://img.icons8.com/?size=100&id=45475&format=png&color=000000';
                     icon.alt = 'Dark Mode';
                 }
@@ -467,7 +500,7 @@
         // script behind the pdf upload button/part of the webpage
         document.getElementById('pdf_upload').addEventListener('change', function() {
             const fileNameDisplay = document.getElementById('file_name');
-            const uploadButtonText = document.querySelector('.upload-button-text');
+            const uploadButtonText = document.querySelector('.upload-label span');
             const file = this.files[0];
             // shows the file name of the file uploaded and renames the upload button to change file
             if (file) {
@@ -482,7 +515,3 @@
     </script>
 </body>
 </html>
-
-
-
-
