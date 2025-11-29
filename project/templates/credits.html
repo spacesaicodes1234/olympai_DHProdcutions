@@ -2,33 +2,39 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Credits & Acknowledgments • Medical Report Summarizer</title>
+    <title>Medical Report Summarizer • T5 AI</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Fonts Used -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         :root {
-            --primary: #ffc107; 
-            --secondary: #6c757d; 
-            --accent: #fd7e14; 
-            --background-light: #ffffff; 
-            --background-dark: #fff3cd; 
-            --text-dark: #212529; 
-            --text-light: #6c757d; 
-            --border: #dee2e6;
-            --shadow: rgba(0, 0, 0, 0.05);
+            /* NEW BLUE PALETTE (https://color.adobe.com/cal-Blue-color-theme-7463915/) - Light Mode */
+            --primary: #1C7595; 
+            --primary-dark: #165A71; 
+            --secondary: #7F8C8D; 
+            --accent: #004358; 
+            --background-light: #FAFAFA; /* Main card/container background */
+            --background-dark: #E5F2F7; /* Body/Secondary background */
+            --text-dark: #2C3E50; 
+            --text-light: #7F8C8D; 
+            --border: #BDC3C7;
+            --shadow: rgba(0, 0, 0, 0.1);
+            --border-hover: var(--primary); 
         }
         body.dark {
-            --primary: #ffc107; 
-            --secondary: #adb5bd;
-            --accent: #fd7e14;
-            --background-light: #212529; 
-            --background-dark: #343a40; 
-            --text-dark: #f8f9fa; 
-            --text-light: #adb5bd;
-            --border: #495057;
-            --shadow: rgba(0, 0, 0, 0.2);
+            /* NEW BLUE PALETTE (https://color.adobe.com/cal-Blue-color-theme-7463915/) - Dark Mode */
+            --primary: #4392B7; 
+            --primary-dark: #357791; 
+            --secondary: #A9B7C0;
+            --accent: #002D3C;
+            --background-light: #1A1A1A; /* Main card/container background */
+            --background-dark: #2A2A2A; /* Body/Secondary background */
+            --text-dark: #F0F0F0; 
+            --text-light: #A9B7C0;
+            --border: #404040;
+            --shadow: rgba(0, 0, 0, 0.4);
+            --border-hover: var(--primary); 
         }
         body {
             font-family: 'Inter', 'Open Sans', sans-serif;
@@ -40,27 +46,30 @@
         }
         .container {
             max-width: 900px;
-            margin: 30px auto;
+            margin: 0 auto;
             background: var(--background-light);
             border-radius: 12px;
-            padding: 30px;
             box-shadow: 0 8px 24px var(--shadow);
+            overflow: hidden;
             transition: background 0.3s;
         }
         header {
+            background: var(--primary);
+            color: var(--background-light); /* Ensure text is visible on primary color */
+            padding: 30px;
             text-align: center;
-            margin-bottom: 40px;
             position: relative;
         }
         h1 {
-            font-size: 2.2rem;
-            color: var(--primary);
             margin: 0;
+            font-size: 2rem;
+            font-weight: 700;
         }
         .subtitle {
-            color: var(--text-light);
-            font-size: 1.1rem;
-            margin-top: 8px;
+            opacity: 0.9;
+            margin-top: 6px;
+            font-weight: 400;
+            font-size: 1rem;
         }
         .mode-toggle {
             position: absolute;
@@ -77,13 +86,14 @@
             display: block;
             width: 60px;
             height: 30px;
-            background: rgba(33, 37, 41, 0.1);
+            /* Using a transparent version of text-dark/text-light for slider background */
+            background: rgba(44, 62, 80, 0.2); 
             border-radius: 30px;
             cursor: pointer;
             transition: background 0.3s;
         }
         .mode-toggle:hover .slider {
-            background: rgba(33, 37, 41, 0.2);
+            background: rgba(44, 62, 80, 0.4); 
         }
         .knob {
             position: absolute;
@@ -104,156 +114,344 @@
             left: 30px;
         }
         body.dark .slider {
-            background: rgba(248, 249, 250, 0.1);
+            background: rgba(240, 240, 240, 0.2); /* Light transparent background for dark mode slider */
         }
         body.dark .mode-toggle:hover .slider {
-            background: rgba(248, 249, 250, 0.2);
+            background: rgba(240, 240, 240, 0.4); 
         }
-        .section {
-            margin: 30px 0;
+        .content {
+            padding: 30px;
         }
-        .section h2 {
-            color: var(--primary);
-            border-bottom: 2px solid var(--primary);
-            padding-bottom: 8px;
-            font-size: 1.6rem;
-        }
-        .credits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
-            margin-top: 15px;
-        }
-        .credit-card {
+        
+        .upload-box {
+            min-height: 180px; 
+            border: 2px dashed var(--border);
+            border-radius: 12px; 
+            padding: 30px 20px; 
+            text-align: center;
             background: var(--background-light);
-            padding: 15px;
+            color: var(--text-dark);
+            transition: all 0.3s ease; 
+            cursor: pointer; 
+            margin: 20px 0; 
+        }
+
+        .upload-box:hover {
+            border-color: var(--border-hover);
+            background: var(--background-dark);
+        }
+
+        .upload-icon {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 3rem; 
+        }
+
+        .upload-box h3 {
+            margin-top: 0; 
+            margin-bottom: 5px;
+            font-size: 1.4rem;
+            color: var(--primary); 
+        }
+
+        .upload-support {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        .upload-label {
+            display: inline-block; 
+            padding: 10px 20px; 
+            background-color: var(--primary);
+            color: var(--background-light); /* Changed to use light background for better contrast on primary */
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            margin: 10px auto; 
+            border-radius: 8px; 
+        }
+
+        .upload-label:hover {
+            background-color: var(--primary-dark); 
+        }
+
+        .file-name {
+            display: block;
+            margin-top: 15px;
+            font-style: italic;
+            font-weight: 500;
+            color: var(--text-dark);
+            padding-bottom: 0; 
+        }
+
+        .controls {
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        /* Summary Controls */
+        .summary-length-box {
+            display: block;
+            /* max-width: 400px; */
+            /* min-width: 300px; */
+            margin: 20px auto 30px auto; 
+            
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            padding: 20px; 
+            background: var(--background-light); 
+            box-shadow: none; 
+            text-align: center; 
+            transition: all 0.3s ease; 
+        }
+        .summary-length-box:hover {
+            border-color: var(--border-hover);
+            background: var(--background-dark);
+        }
+
+        .control-group {
+            display: block;
+            /* max-width: 250px; */
+            /* width: 100%;  */
+            margin: 15px auto; 
+            padding: 0;
+            text-align: center; 
+        }
+        
+        label {
+            display: block; 
+            margin-bottom: 6px;
+            font-weight: 500;
+            color: var(--text-dark);
+            text-align: center; 
+        }
+        
+        input[type="number"] {
+            width: 100%; 
+            max-width: 250px;
+            padding: 10px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 1rem;
+            background: var(--background-light);
+            color: var(--text-dark);
+            transition: border-color 0.3s, background 0.3s;
+            text-align: center; 
+        }
+        input[type="number"]:focus {
+            border-color: var(--primary);
+            outline: none;
+        }
+
+        button {
+            background: var(--primary);
+            color: var(--background-light); /* Changed to use light background for better contrast on primary */
+            border: none;
+            padding: 12px 28px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+        }
+        button:hover {
+            background: var(--primary-dark);
+            transform: translateY(-1px);
+        }
+        .summary-card {
+            margin-top: 30px;
+            padding: 25px;
+            background: var(--background-light);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            transition: background 0.3s, border 0.3s;
+        }
+        .summary-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .summary-text {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background: var(--background-dark);
+            padding: 20px;
             border-radius: 8px;
             border-left: 4px solid var(--primary);
-            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 2px 8px var(--shadow);
+            transition: background 0.3s, color 0.3s;
         }
-        .credit-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 12px var(--shadow);
+        .action-btn {
+            background: var(--accent);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            color: #ffffff;
+            text-decoration: none;
+            display: inline-block;
+            margin-right: 8px;
+            transition: background 0.3s;
         }
-        .credit-card h3 {
-            margin: 0 0 6px 0;
-            color: var(--text-dark);
+        .action-btn:hover {
+            /* Using accent-dark equivalent or a slight change */
+            background: #003647; 
+        }
+        .pdf-btn {
+            background: var(--accent);
+        }
+        .pdf-btn:hover {
+            background: #003647;
+        }
+        .tips {
+            margin-top: 25px;
+            padding: 18px;
+            background: var(--background-light);
+            border-left: 4px solid var(--accent);
+            border-radius: 6px;
+            transition: background 0.3s;
+        }
+        .tips h3 {
+            color: var(--primary);
+            margin-top: 0;
             font-size: 1.2rem;
         }
-        .credit-card a {
-            color: var(--primary);
-            text-decoration: none;
+        .tips ul {
+            margin: 8px 0;
+            padding-left: 18px;
         }
-        .credit-card a:hover {
-            text-decoration: underline;
+        .tips li {
+            margin-bottom: 6px;
         }
-        .footer {
+        .flash {
+            padding: 12px;
+            margin: 15px 0;
+            border-radius: 6px;
+            /* Using a light red/warning style for flash message */
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+        }
+        footer {
             text-align: center;
-            margin-top: 50px;
-            padding-top: 20px;
-            border-top: 1px solid var(--border);
+            padding: 25px;
             color: var(--text-light);
-            font-size: 0.95rem;
-        }
-        .back-link {
-            display: inline-block;
-            margin-top: 15px;
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-        }
-        .back-link:hover {
-            text-decoration: underline;
+            font-size: 0.9rem;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>Credits & Acknowledgments</h1>
-            <!-- Dark Mode & Light Mode Toggle -->
+            <h1>Prescribify</h1>
+            <p class="subtitle">Upload a PDF Report • Get AI summary + Personalized Health Tips</p>
             <label class="mode-toggle">
                 <input type="checkbox" id="toggle" onchange="toggleMode()">
                 <span class="slider">
                     <span class="knob">
-                        <img id="modeIcon" src="https://img.icons8.com/ios/50/212529/moon-symbol.png" alt="Dark Mode">
+                        <img id="modeIcon" src="https://img.icons8.com/?size=100&id=45475&format=png&color=000000" alt="Dark Mode">
                     </span>
                 </span>
             </label>
-            <div class="section">
-            <h2>Team:</h2>
-            <!-- Members of our Team -->
-            <div class="credits-grid">
-                <div class="credit-card">
-                    <h3>Sai Shashank</h3>
-                    <p>Programmer and Group Leader</p>
-                    <a href="https://github.com/spacesaicodes1234" target="_blank">GitHub</a>
-                </div>
-                <div class="credit-card">
-                    <h3>Hrishi Parekh</h3>
-                    <p>Programmer and Coordinator</p>
-                    <a href="https://github.com/Sc-rypto" target="_blank">GitHub</a>
-                </div>
-                <div class="credit-card">
-                    <h3>Asher</h3>
-                    <p>UI and Creative Designer</p>
-                    <a href="https://github.com/AsherLewis" target="_blank">GitHub</a>
-                </div>
-            </div>
-        </div>
         </header>
-
-        <div class="section">
-            <!-- Acknowledgements to external resources used -->
-            <h2>Core AI Model</h2>
-            <div class="credits-grid">
-                <div class="credit-card">
-                    <h3>T5 (Text-to-Text Transfer Transformer)</h3>
-                    <p>By Google Research • 2020</p>
-                    <a href="https://huggingface.co/t5-base" target="_blank">huggingface.co/t5-base</a>
+        <div class="content">
+            <form method="post" enctype="multipart/form-data">
+                <div class="upload-box">
+                    <div class="upload-icon">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                    </div>
+                    <h3>Upload Medical Report</h3>
+                    
+                    <input type="file" id="pdf_upload" name="pdf_file" accept=".pdf" required style="display: none;">
+                    
+                    <label for="pdf_upload" class="upload-label">
+                        <span class="upload-button-text">Choose File</span>
+                    </label>
+                    <span class="file-name" id="file_name"></span>
                 </div>
+
+                <div class="controls">
+                    <div class="summary-length-box">
+                        <h3 style="color:var(--primary); margin-top:5px; margin-bottom: 20px; font-size: 1.2rem;">Summary Length Parameters</h3>
+                        <div class="control-group summary-control-item">
+                            <label for="min_length">Minimum Summary Length (words)</label>
+                            <input type="number" id="min_length" name="min_length" value="{{ min_length|default(60) }}" min="30" max="200">
+                        </div>
+                        <div class="control-group summary-control-item">
+                            <label for="max_length">Maximum Summary Length (words)</label>
+                            <input type="number" id="max_length" name="max_length" value="{{ max_length|default(180) }}" min="80" max="512">
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align:center; margin:25px 0;">
+                <button type="submit">Generate Summary & Tips</button>
+                </div>
+            </form>
+
+            {% with messages = get_flashed_messages() %}
+              {% if messages %}
+                {% for msg in messages %}
+                  <div class="flash">{{ msg }}</div>
+                {% endfor %}
+              {% endif %}
+            {% endwith %}
+
+            {% if summary %}
+            <div class="summary-card">
+                <div class="summary-title">
+                AI-Generated Summary
+                    <a href="/download_summary?summary={{ summary|urlencode }}&filename={{ filename|default('report') }}&tips={{ health_tips|join('|||')|urlencode }}" 
+                        class="action-btn pdf-btn">Download PDF with Tips</a>
+                    <button class="action-btn" onclick="copySummary(event)">Copy Summary</button>
+                </div>
+                <div class="summary-text" id="summaryText">
+                {{ summary }}
+                </div>
+                {% if filename %}
+                <p style="margin-top:15px; color:var(--text-light); font-size:0.9rem;">
+                    Source: <strong>{{ filename }}</strong>
+                </p>
+                {% endif %}
             </div>
+
+            <div class="tips">
+            <h3>Personal Health Recommendations</h3>
+                <p>Based on your report, here are some safe, general suggestions:</p>
+                <ul>
+                    {% for tip in health_tips %}
+                        <li>{{ tip }}</li>
+                    {% endfor %}
+                </ul>
+                <p><em>These are general wellness tips • Always consult your doctor before making changes.</em></p>
+            </div>
+            {% endif %} 
         </div>
 
-        <div class="section">
-            <h2>Libraries & Frameworks</h2>
-            <div class="credits-grid">
-                <div class="credit-card">
-                    <h3>Flask</h3>
-                    <p>Lightweight Python web framework</p>
-                    <a href="https://flask.palletsprojects.com" target="_blank">flask.palletsprojects.com</a>
-                </div>
-                <div class="credit-card">
-                    <h3>Hugging Face Transformers</h3>
-                    <p>State-of-the-art NLP models</p>
-                    <a href="https://huggingface.co" target="_blank">huggingface.co</a>
-                </div>
-                <div class="credit-card">
-                    <h3>PyPDF2</h3>
-                    <p>PDF text extraction</p>
-                    <a href="https://github.com/py-pdf/PyPDF2" target="_blank">GitHub</a>
-                </div>
-                <div class="credit-card">
-                    <h3>WeasyPrint</h3>
-                    <p>HTML → PDF rendering engine</p>
-                    <a href="https://weasyprint.org" target="_blank">weasyprint.org</a>
-                </div>
-            </div>
-        </div>
-        <footer class="footer">
-            <p class="subtitle">This app is made possible by amazing open-source tools and research!</p>
-            <a href="http://localhost:5000/" class="back-link">Back to Home</a>
+        <footer>
+            <a href="{{ url_for('credits') }}" style="color:var(--primary); text-decoration:none;">Credits & Acknowledgments</a>
+            <br><br>
+            Powered by T5 • Built for healthcare • Privacy-First
+            <br>
+            © 2025 DH Productions
         </footer>
     </div>
 
     <script>
+        // Darkmode-Lightmode toggle
         function updateModeElements(isDark) {
             const icon = document.getElementById('modeIcon');
             const toggleInput = document.getElementById('toggle');
-            // Changes the icon related to the lightmode-darkmode toggle
+            
             if (isDark) {
                 document.body.classList.add('dark');
                 if (icon) {
+                    // Update icon source for dark mode (sun icon, light color)
                     icon.src = 'https://img.icons8.com/?size=100&id=GIywaBFJCJiI&format=png&color=FFFFFF';
                     icon.alt = 'Light Mode';
                 }
@@ -261,13 +459,14 @@
             } else {
                 document.body.classList.remove('dark');
                 if (icon) {
+                    // Update icon source for light mode (moon icon, dark color)
                     icon.src = 'https://img.icons8.com/?size=100&id=45475&format=png&color=000000';
                     icon.alt = 'Dark Mode';
                 }
                 if (toggleInput) toggleInput.checked = false;
             }
         }
-        // Sets to dark mode on default startup
+        // Sets the default setting to dark mode on the startup of the website
         window.onload = function() {
             const mode = localStorage.getItem('mode') || 'dark'; 
             
@@ -277,7 +476,7 @@
             
             updateModeElements(mode === 'dark');
         };
-        // Stores the preference of the user (i.e. darkmode or lightmode) while swapping pages (index.html and credits.html)
+        // The dark mode - light mode toggle in accordance to the user's preference
         function toggleMode() {
             const isCurrentlyDark = document.body.classList.contains('dark');
             const newIsDark = !isCurrentlyDark;
@@ -286,6 +485,33 @@
             
             localStorage.setItem('mode', newIsDark ? 'dark' : 'light');
         }
+        // the script behind the copy summary button - regardless whether it worked or didn't giving an output for both
+        function copySummary(event) {
+            const text = document.getElementById('summaryText').innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                const btn = event.target;
+                const original = btn.innerHTML;
+                btn.innerHTML = 'Copied!';
+                setTimeout(() => { btn.innerHTML = original; }, 2000);
+            }).catch(() => {
+                alert('Copy failed — please select and copy manually');
+            });
+        }
+        // script behind the pdf upload button/part of the webpage
+        document.getElementById('pdf_upload').addEventListener('change', function() {
+            const fileNameDisplay = document.getElementById('file_name');
+            const uploadButtonText = document.querySelector('.upload-label span');
+            const file = this.files[0];
+            // shows the file name of the file uploaded and renames the upload button to change file
+            if (file) {
+                fileNameDisplay.textContent = `Selected File: ${file.name}`;
+                uploadButtonText.textContent = 'Change File';
+            } else {
+                // keep the original format of the upload box as no file is selected
+                fileNameDisplay.textContent = 'No file selected.';
+                uploadButtonText.textContent = 'Choose File or Drag Here';
+            }
+        });
     </script>
 </body>
 </html>
