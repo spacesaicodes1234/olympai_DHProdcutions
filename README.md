@@ -63,7 +63,7 @@ source venv/bin/activate        # On Windows: venv\Scripts\activate
 python app.py
 
 # 3. Install dependencies
-pip install -r requirements.txt
+pip install Flask transformers torch PyPDF2 weasyprint Werkzeug
 
 ```
 
@@ -93,6 +93,7 @@ Extract zip and open in idle
 Install dependencies
 ```bash
 
+# Install dependencies
 pip install Flask transformers torch PyPDF2 weasyprint Werkzeug
 
 ```
