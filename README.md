@@ -8,9 +8,19 @@ No data leaves your device • Works 100% locally • Export summaries as stunni
 Perfect for doctors, nurses, medical students, researchers, and anyone managing health records.
 
 ### Screenshots:
-<img width="1057" height="931" alt="image" src="https://github.com/user-attachments/assets/bafa9f18-4eb6-482b-8819-4860247a0121" />
-<img width="970" height="722" alt="image" src="https://github.com/user-attachments/assets/e418ce08-a68e-47a7-b544-9ad498731ad3" />
-<img width="655" height="731" alt="image" src="https://github.com/user-attachments/assets/84b23387-0dd3-4a6c-a55d-33101ea14dd0" />
+
+light mode:
+
+<img width="1250" height="929" alt="image" src="https://github.com/user-attachments/assets/6a874b82-6e77-4338-8f05-f5a74158a544" />
+<img width="1306" height="738" alt="image" src="https://github.com/user-attachments/assets/ae483b89-c156-4613-b0e4-665164938db3" />
+
+dark mode:
+
+<img width="1191" height="927" alt="image" src="https://github.com/user-attachments/assets/aaddf408-6650-4fee-b0a8-8d3928a208d2" />
+<img width="1259" height="742" alt="image" src="https://github.com/user-attachments/assets/0dbac3c6-6456-497d-9eee-c8ffd59b146a" />
+
+
+
 
 
 ---
