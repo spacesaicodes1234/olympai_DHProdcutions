@@ -41,7 +41,7 @@ Perfect for doctors, nurses, medical students, researchers, and anyone managing 
 
 ---
 
-## Running the webapp
+## Proceedure to run the website
 
 ### Prerequisites
 
