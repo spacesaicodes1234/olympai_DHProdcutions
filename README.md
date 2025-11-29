@@ -38,17 +38,13 @@ Perfect for doctors, nurses, medical students, researchers, and anyone managing 
 
 ---
 
-### Live Demo (Local)
-Run the app and visit:  
-http://127.0.0.1:5000
+### Running the webapp
 
----
-
-### Prerequisites
+## Prerequisites
 
 **Downlaod and install python from www.python.org**
 
-### Method 1
+## Method 1
 
 **Quick Start**
 
@@ -72,7 +68,7 @@ pip install Flask transformers torch PyPDF2 weasyprint Werkzeug
 Open your browser → http://127.0.0.1:5000
 Upload a medical report → Get AI summary → Download or copy!
 
-### Method 2
+## Method 2
 
 **Step 1:** 
 Downlaod zip file from the GitHub repository on this website using the highlighted box below:
