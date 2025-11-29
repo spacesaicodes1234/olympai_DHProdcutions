@@ -73,10 +73,11 @@ Upload a medical report → Get AI summary → Download or copy!
 ### Method 2
 
 **Step 1:** 
-Downlaod python from www.python.org
+Downlaod python from www.python.org and install
 
 **Step 2:** 
-Downlaod zip from github repo
+Downlaod zip file from github repository from this site using the highlighted box below
+
 <img width="1691" height="652" alt="image" src="https://github.com/user-attachments/assets/b1e64938-c826-4338-a22f-a219ebaef693" />
 
 **Step 3:** 
