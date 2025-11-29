@@ -70,6 +70,16 @@ Upload a medical report → Get AI summary → Download or copy!
 
 ### Method 2
 
+**Step1:** 
+Downlaod python from www.python.org
+
+**Step2:** 
+Downlaod zip from github repo
+<img width="1691" height="652" alt="image" src="https://github.com/user-attachments/assets/b1e64938-c826-4338-a22f-a219ebaef693" />
+
+
+
+
 ---
 
 ### File/Folder,Purpose & Description
