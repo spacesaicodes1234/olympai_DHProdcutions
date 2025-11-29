@@ -117,3 +117,11 @@ http://127.0.0.1:5000
 | templates/credits.html | Credits page |
 | requirements.txt | Complete list of Python dependencies with pinned versions for perfect reproducibility. |
 | README.md | This file – full project documentation, setup guide, and file descriptions. |
+
+---
+
+### List of AI tools used: 
+
+- T5 (Text-to-Text Transfer Transformer)
+- Hugging Face Transformers
+- Github Copilot for debugging
